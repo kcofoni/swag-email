@@ -1,0 +1,1 @@
+docker exec -t swag sendmail -f kcofoni@anolis-management.fr kcofoni@gmail.com < /docker-dev/swag-email/test-email/testsendmail.txt

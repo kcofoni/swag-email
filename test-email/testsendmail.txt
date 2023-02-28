@@ -1,0 +1,6 @@
+Content-Type: text/plain; charset=utf-8
+from: vmtest <kcofoni@anolis-management.fr>
+to: kcofoni@gmail.com
+subject: ceci est un sujet de test
+Ce message est envoyé de vmtest pour tester l'envoi de mail depuis un docker server
+.

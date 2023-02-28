@@ -1,0 +1,3 @@
+docker build -t swag-mail --secret id=my_env,src=.env .
+docker tag swag-mail kcofoni/swag-mail
+docker push kcofoni/swag-mail
