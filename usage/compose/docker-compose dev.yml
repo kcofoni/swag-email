@@ -1,0 +1,36 @@
+---
+version: "2.1"
+services:
+  authelia:
+    image: authelia/authelia:latest
+    container_name: authelia
+    environment:
+      - TZ=Europe/Paris    
+    volumes:
+      - /home/docker/appdata/authelia/config:/config
+    restart: unless-stopped      
+  swag:
+    image: kcofoni/swag-mail
+    container_name: swag
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Paris
+      - URL=anolis-management.fr
+      - VALIDATION=dns
+      - SUBDOMAINS=wildcard
+      - DNSPLUGIN=ovh
+      - PROPAGATION=30
+      - STAGING=false
+      - EMAIL=kcofoni@anolis-management.fr
+      - DOCKER_MODS=linuxserver/mods:swag-dbip|linuxserver/mods:swag-dashboard
+    volumes:
+      - /home/docker/appdata/swag/config:/config
+      - /mnt/remotedir/ha:/hass-log
+      - /home/docker/dev:/docker-dev
+    ports:
+      - 443:443
+      - 80:80
+    restart: unless-stopped
