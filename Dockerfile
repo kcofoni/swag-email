@@ -1,5 +1,5 @@
-# FROM linuxserver/swag:latest
-FROM linuxserver/swag:2.9.0
+FROM linuxserver/swag:latest
+# FROM linuxserver/swag:2.9.0
 
 # install msmtp package
 RUN set-ex; \
